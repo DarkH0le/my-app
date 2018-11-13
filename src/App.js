@@ -5,8 +5,16 @@ import Home from './Home.js';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            user: 'Ivan',
+            name: ' Jose'
+        };
+    }
   render() {
-    return <Home/>
+    return <Home user={this.state.user} name={this.state.name}/>
   }
 }
 

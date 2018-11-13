@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 
 class Home extends Component {
     render() {
+
+        const {user} = this.props;
+
+
         return(
             <div className="App">
                 <div className="container text-center">
@@ -19,12 +23,34 @@ class Home extends Component {
                                 with <a href="https://firebase.google.com">Firebase</a>.
                             </p>
 
-                            <a href="/register" className="btn btn-outline-primary mr-2">
-                                Register
-                            </a>
-                            <a href="/login" className="btn btn-outline-primary mr-2">
-                                Log In
-                            </a>
+                            {/* immediately-invoked function expressions*/}
+                            {/*
+                                (() => {
+                                   if(user == null){
+                                     return (<span>
+                                    <a href="/register" className="btn btn-outline-primary mr-2">
+                                    Register
+                                    </a>
+                                    <a href="/login" className="btn btn-outline-primary mr-2">
+                                    Log In
+                                    </a>
+                                </span>);
+                                   }
+                                })()
+                            */}
+
+                            {/* Or ternary operations*/}
+                            {user == null &&
+                                <span>
+                                    <a href="/register" className="btn btn-outline-primary mr-2">
+                                    Register
+                                    </a>
+                                    <a href="/login" className="btn btn-outline-primary mr-2">
+                                    Log In
+                                    </a>
+                                </span>
+                            }
+
                             <a href="/meetings" className="btn btn-primary">
                                 Meetings
                             </a>
